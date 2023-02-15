@@ -11,6 +11,10 @@
 		B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F60F299D41AC00658BE7 /* ContentView.swift */; };
 		B9C5F612299D41AE00658BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5F611299D41AE00658BE7 /* Assets.xcassets */; };
 		B9C5F615299D41AE00658BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5F614299D41AE00658BE7 /* Preview Assets.xcassets */; };
+		B9C5F61E299D41E200658BE7 /* RotaryKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F61D299D41E200658BE7 /* RotaryKnob.swift */; };
+		B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */; };
+		B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F623299D431100658BE7 /* View+Extensions.swift */; };
+		B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		B9C5F611299D41AE00658BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9C5F614299D41AE00658BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9C5F616299D41AE00658BE7 /* RotaryKnob.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RotaryKnob.entitlements; sourceTree = "<group>"; };
+		B9C5F61D299D41E200658BE7 /* RotaryKnob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnob.swift; sourceTree = "<group>"; };
+		B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		B9C5F623299D431100658BE7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,8 @@
 		B9C5F60C299D41AC00658BE7 /* RotaryKnob */ = {
 			isa = PBXGroup;
 			children = (
+				B9C5F61F299D421E00658BE7 /* Extensions */,
+				B9C5F61C299D41CE00658BE7 /* Components */,
 				B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */,
 				B9C5F60F299D41AC00658BE7 /* ContentView.swift */,
 				B9C5F611299D41AE00658BE7 /* Assets.xcassets */,
@@ -67,6 +77,32 @@
 				B9C5F614299D41AE00658BE7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B9C5F61C299D41CE00658BE7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5F61D299D41E200658BE7 /* RotaryKnob.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B9C5F61F299D421E00658BE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5F622299D430400658BE7 /* SwiftUI */,
+				B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B9C5F622299D430400658BE7 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5F623299D431100658BE7 /* View+Extensions.swift */,
+				B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
+				B9C5F61E299D41E200658BE7 /* RotaryKnob.swift in Sources */,
+				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
+				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
+				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
