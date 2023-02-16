@@ -17,6 +17,9 @@
 		B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */; };
 		B9C5F628299E67AF00658BE7 /* TouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F627299E67AF00658BE7 /* TouchSpace.swift */; };
 		B9C5F62A299E69F900658BE7 /* RotaryTouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */; };
+		B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */; };
+		B9C5F630299EF46E00658BE7 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */; };
+		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F627299E67AF00658BE7 /* TouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSpace.swift; sourceTree = "<group>"; };
 		B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryTouchSpace.swift; sourceTree = "<group>"; };
+		B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
+		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 				B9C5F61D299D41E200658BE7 /* RotaryKnob.swift */,
 				B9C5F627299E67AF00658BE7 /* TouchSpace.swift */,
 				B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */,
+				B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -98,6 +105,8 @@
 			children = (
 				B9C5F622299D430400658BE7 /* SwiftUI */,
 				B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */,
+				B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */,
+				B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,10 +194,13 @@
 				B9C5F62A299E69F900658BE7 /* RotaryTouchSpace.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F61E299D41E200658BE7 /* RotaryKnob.swift in Sources */,
+				B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */,
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
+				B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */,
 				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
 				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
+				B9C5F630299EF46E00658BE7 /* SizePreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
