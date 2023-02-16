@@ -10,7 +10,7 @@ import SwiftUI
 struct RotaryKnob: View {
     var body: some View {
         Circle()
-            .fill(.black)
+            .fill(Color.blacksmooth)
             .frame(size: .marginLarger)
             .overlay (alignment: .top) {
                 Circle()
