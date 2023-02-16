@@ -15,6 +15,8 @@
 		B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */; };
 		B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F623299D431100658BE7 /* View+Extensions.swift */; };
 		B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */; };
+		B9C5F628299E67AF00658BE7 /* TouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F627299E67AF00658BE7 /* TouchSpace.swift */; };
+		B9C5F62A299E69F900658BE7 /* RotaryTouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F623299D431100658BE7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B9C5F627299E67AF00658BE7 /* TouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSpace.swift; sourceTree = "<group>"; };
+		B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryTouchSpace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				B9C5F61D299D41E200658BE7 /* RotaryKnob.swift */,
+				B9C5F627299E67AF00658BE7 /* TouchSpace.swift */,
+				B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C5F628299E67AF00658BE7 /* TouchSpace.swift in Sources */,
+				B9C5F62A299E69F900658BE7 /* RotaryTouchSpace.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F61E299D41E200658BE7 /* RotaryKnob.swift in Sources */,
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,

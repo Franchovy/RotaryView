@@ -23,3 +23,9 @@ extension CGFloat {
     ///  2.0
     static var marginTinier: Self { 2.0 }
 }
+
+extension CGFloat {
+    var double: Double {
+        Double(self)
+    }
+}

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RotaryKnob: View {
+    let rotation: CGFloat
+    
     var body: some View {
         Circle()
             .fill(Color.blacksmooth)
@@ -18,11 +20,12 @@ struct RotaryKnob: View {
                     .frame(size: .marginTiny)
                     .padding(.marginTiny)
             }
+            .rotationEffect(.init(radians: rotation.double))
     }
 }
 
 struct RotaryKnob_Previews: PreviewProvider {
     static var previews: some View {
-        RotaryKnob()
+        RotaryKnob(rotation: .pi / 4)
     }
 }
