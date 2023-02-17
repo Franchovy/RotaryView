@@ -15,13 +15,13 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center) {
             RotaryGestureView(angle: $angle) {
-                RotaryKnobView(rotation: angle)
+                RotaryKnobView(rotation: .zero, velocity: $velocity)
             }
         }
         .background(.white)
         .frame(width: 400, height: 400)
         .onChange(of: angle) { newValue in
-            velocity = previousAngle.radians - newValue.radians
+            velocity = newValue.radians - previousAngle.radians
             previousAngle = newValue
             print(velocity)
         }
