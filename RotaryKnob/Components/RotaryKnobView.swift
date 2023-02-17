@@ -1,5 +1,5 @@
 //
-//  RotaryKnob.swift
+//  RotaryKnobView.swift
 //  RotaryKnob
 //
 //  Created by Maxime Franchot on 15/02/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct RotaryKnob: View {
-    let rotation: CGFloat
+struct RotaryKnobView: View {
+    let angle: Angle
     
     var body: some View {
         Circle()
@@ -20,12 +20,14 @@ struct RotaryKnob: View {
                     .frame(size: .marginTiny)
                     .padding(.marginTiny)
             }
-            .rotationEffect(.init(radians: rotation.double))
+            .rotationEffect(
+                Angle(radians: .pi / 2) - angle
+            )
     }
 }
 
-struct RotaryKnob_Previews: PreviewProvider {
+struct RotaryKnobView_Previews: PreviewProvider {
     static var previews: some View {
-        RotaryKnob(rotation: .pi / 4)
+        RotaryKnobView(angle: .init(radians: .pi / 4))
     }
 }

@@ -28,4 +28,8 @@ extension CGFloat {
     var double: Double {
         Double(self)
     }
+    
+    var sign: CGFloat {
+        self >= 0 ? 1.0 : -1.0
+    }
 }

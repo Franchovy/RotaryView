@@ -13,3 +13,20 @@ extension View {
             .frame(width: size, height: size, alignment: alignment)
     }
 }
+
+extension View {
+    
+    @ViewBuilder
+    func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+        self
+            .background(
+                GeometryReader { proxy in
+                    Color.clear
+                        .preference(key: SizePreferenceKey.self, value: proxy.size)
+                }
+                .onPreferenceChange (SizePreferenceKey.self) {
+                    onChange($0)
+                }
+            )
+    }
+}

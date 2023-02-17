@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var rotation: CGFloat = .zero
+    @State var angle: Angle = .zero
     
     var body: some View {
         VStack(alignment: .center) {
-            RotaryTouchSpace(rotation: $rotation) {
-                RotaryKnob(rotation: rotation)
+            RotaryTouchSpace(angle: $angle) {
+                RotaryKnobView(angle: angle)
             }
         }
         .background(.white)
