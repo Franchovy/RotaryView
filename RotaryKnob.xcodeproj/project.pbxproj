@@ -18,9 +18,9 @@
 		B9C5F628299E67AF00658BE7 /* TouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F627299E67AF00658BE7 /* TouchSpace.swift */; };
 		B9C5F62A299E69F900658BE7 /* RotaryTouchSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */; };
 		B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */; };
-		B9C5F630299EF46E00658BE7 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */; };
 		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
 		B9C5F634299F85C100658BE7 /* GestureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* GestureContainer.swift */; };
+		B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +37,9 @@
 		B9C5F627299E67AF00658BE7 /* TouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchSpace.swift; sourceTree = "<group>"; };
 		B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryTouchSpace.swift; sourceTree = "<group>"; };
 		B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F633299F85C100658BE7 /* GestureContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureContainer.swift; sourceTree = "<group>"; };
+		B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 				B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */,
 				B9C5F627299E67AF00658BE7 /* TouchSpace.swift */,
 				B9C5F629299E69F900658BE7 /* RotaryTouchSpace.swift */,
-				B9C5F62F299EF46E00658BE7 /* SizePreferenceKey.swift */,
 				B9C5F633299F85C100658BE7 /* GestureContainer.swift */,
 			);
 			path = Components;
@@ -119,6 +118,7 @@
 			children = (
 				B9C5F623299D431100658BE7 /* View+Extensions.swift */,
 				B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */,
+				B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -202,9 +202,9 @@
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
 				B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */,
 				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,
+				B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
 				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
-				B9C5F630299EF46E00658BE7 /* SizePreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
