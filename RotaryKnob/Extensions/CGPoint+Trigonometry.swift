@@ -8,7 +8,11 @@
 import Foundation
 
 extension CGPoint {
-    func atan() -> CGFloat {
-        return Darwin.atan(y / x)
+    var inverseTangent: CGFloat {
+        return atan(y / x)
+    }
+    
+    var length: CGFloat {
+        return hypot(x, y)
     }
 }
