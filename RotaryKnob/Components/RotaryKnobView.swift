@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RotaryKnobView: View {
-    let angle: Angle
+    let rotation: Angle
     
     var body: some View {
         Circle()
@@ -21,13 +21,13 @@ struct RotaryKnobView: View {
                     .padding(.marginTiny)
             }
             .rotationEffect(
-                Angle(radians: .pi / 2) - angle
+                Angle(radians: .pi / 2) - rotation
             )
     }
 }
 
 struct RotaryKnobView_Previews: PreviewProvider {
     static var previews: some View {
-        RotaryKnobView(angle: .init(radians: .pi / 4))
+        RotaryKnobView(rotation: .init(radians: .pi / 4))
     }
 }

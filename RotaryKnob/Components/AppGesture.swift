@@ -52,15 +52,6 @@ extension AppGesture {
         
         return angle(from: endPoint, center: center)
     }
-    
-    func rotationalVelocity(around center: CGPoint) -> CGFloat? {
-        guard isActive else {
-            return nil
-        }
-        
-        return angle(from: endPoint, center: center)
-            - angle(from: previousPoint, center: center)
-    }
 }
 
 // MARK: - Private methods

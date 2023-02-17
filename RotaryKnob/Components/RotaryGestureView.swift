@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RotaryGestureView<Content: View>: View {
     @Binding var angle: Angle
-    @Binding var velocity: CGFloat
     let content: () -> Content
     
     @State private var gestureContainer = AppGesture()
@@ -25,10 +24,8 @@ struct RotaryGestureView<Content: View>: View {
         .onChange(of: gestureContainer) { newValue in
             if newValue.isActive {
                 let rotation = newValue.rotation(around: center)!
-                let velocity = newValue.rotationalVelocity(around: center)!
                 
                 angle = Angle(radians: rotation)
-                self.velocity = velocity
             }
         }
     }
