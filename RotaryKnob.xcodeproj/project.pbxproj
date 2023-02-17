@@ -21,6 +21,7 @@
 		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
 		B9C5F634299F85C100658BE7 /* GestureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* GestureContainer.swift */; };
 		B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */; };
+		B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F633299F85C100658BE7 /* GestureContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureContainer.swift; sourceTree = "<group>"; };
 		B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
+		B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */,
 				B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */,
 				B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */,
+				B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,
 				B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
+				B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */,
 				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

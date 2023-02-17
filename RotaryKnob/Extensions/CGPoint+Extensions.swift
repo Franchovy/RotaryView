@@ -29,11 +29,3 @@ extension CGPoint {
         lhs.y -= rhs.y
     }
 }
-
-// MARK: - Trigonometry Functions
-
-extension CGPoint {
-    func atan() -> CGFloat {
-        return Darwin.atan(y / x)
-    }
-}
