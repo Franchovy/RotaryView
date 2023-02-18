@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B93C59D929A12A74001F602F /* RotaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59D829A12A74001F602F /* RotaryView.swift */; };
+		B93C59DB29A12C49001F602F /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59DA29A12C49001F602F /* KnobView.swift */; };
 		B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */; };
 		B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F60F299D41AC00658BE7 /* ContentView.swift */; };
 		B9C5F612299D41AE00658BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5F611299D41AE00658BE7 /* Assets.xcassets */; };
 		B9C5F615299D41AE00658BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5F614299D41AE00658BE7 /* Preview Assets.xcassets */; };
-		B9C5F61E299D41E200658BE7 /* RotaryKnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */; };
 		B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */; };
 		B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F623299D431100658BE7 /* View+Extensions.swift */; };
 		B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */; };
-		B9C5F62A299E69F900658BE7 /* RotaryGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotaryGestureView.swift */; };
+		B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */; };
 		B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */; };
 		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
 		B9C5F634299F85C100658BE7 /* AppGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* AppGesture.swift */; };
@@ -24,17 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B93C59D829A12A74001F602F /* RotaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryView.swift; sourceTree = "<group>"; };
+		B93C59DA29A12C49001F602F /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		B9C5F60A299D41AC00658BE7 /* RotaryKnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryKnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobApp.swift; sourceTree = "<group>"; };
 		B9C5F60F299D41AC00658BE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9C5F611299D41AE00658BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9C5F614299D41AE00658BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9C5F616299D41AE00658BE7 /* RotaryKnob.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RotaryKnob.entitlements; sourceTree = "<group>"; };
-		B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobView.swift; sourceTree = "<group>"; };
 		B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F623299D431100658BE7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		B9C5F629299E69F900658BE7 /* RotaryGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryGestureView.swift; sourceTree = "<group>"; };
+		B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationalGestureView.swift; sourceTree = "<group>"; };
 		B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F633299F85C100658BE7 /* AppGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGesture.swift; sourceTree = "<group>"; };
@@ -56,9 +58,26 @@
 		B93C59CF29A125BF001F602F /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */,
+				B93C59D729A12A6A001F602F /* RotaryView */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		B93C59D429A12A3A001F602F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5F633299F85C100658BE7 /* AppGesture.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B93C59D729A12A6A001F602F /* RotaryView */ = {
+			isa = PBXGroup;
+			children = (
+				B93C59D829A12A74001F602F /* RotaryView.swift */,
+				B93C59DA29A12C49001F602F /* KnobView.swift */,
+			);
+			path = RotaryView;
 			sourceTree = "<group>";
 		};
 		B9C5F601299D41AC00658BE7 = {
@@ -80,6 +99,7 @@
 		B9C5F60C299D41AC00658BE7 /* RotaryKnob */ = {
 			isa = PBXGroup;
 			children = (
+				B93C59D429A12A3A001F602F /* Models */,
 				B93C59CF29A125BF001F602F /* Features */,
 				B9C5F61F299D421E00658BE7 /* Extensions */,
 				B9C5F61C299D41CE00658BE7 /* Components */,
@@ -103,8 +123,7 @@
 		B9C5F61C299D41CE00658BE7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B9C5F629299E69F900658BE7 /* RotaryGestureView.swift */,
-				B9C5F633299F85C100658BE7 /* AppGesture.swift */,
+				B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,16 +220,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C5F62A299E69F900658BE7 /* RotaryGestureView.swift in Sources */,
+				B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */,
+				B93C59DB29A12C49001F602F /* KnobView.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F634299F85C100658BE7 /* AppGesture.swift in Sources */,
-				B9C5F61E299D41E200658BE7 /* RotaryKnobView.swift in Sources */,
 				B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */,
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
 				B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */,
 				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,
 				B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
+				B93C59D929A12A74001F602F /* RotaryView.swift in Sources */,
 				B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */,
 				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
 			);

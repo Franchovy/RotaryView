@@ -1,5 +1,5 @@
 //
-//  RotaryGestureView.swift
+//  RotationalGestureView.swift
 //  RotaryKnob
 //
 //  Created by Maxime Franchot on 16/02/23.
@@ -7,37 +7,23 @@
 
 import SwiftUI
 
-struct RotaryGestureView<Content: View>: View {
-    @Binding var angle: Angle
-    let content: () -> Content
+struct RotationalGestureView<Content: View>: View {
+    let content: (RotationalDragGesture, Angle) -> Content
     
-    @State private var gestureContainer = AppGesture()
+    @State private var gestureContainer = RotationalDragGesture()
+    @State private var angle: Angle = .zero
     @State private var center: CGPoint = .zero
     
-    var body: some View {
-        GestureView(gestureContainer: $gestureContainer) {
-            content()
-        }
-        .readSize { size in
-            center = size.center
-        }
-        .onChange(of: gestureContainer) { newValue in
-            if newValue.isActive {
-                let rotation = newValue.endPoint.angle(around: center)
-                
-                angle = Angle(radians: rotation)
-            }
-        }
+    init(content: @escaping (RotationalDragGesture, Angle) -> Content) {
+        self.content = content
     }
-}
-
-fileprivate struct GestureView<Content: View>: View {
-    @Binding var gestureContainer: AppGesture
-    let content: () -> Content
     
     var body: some View {
         SpacerView {
-            content()
+            content(gestureContainer, angle)
+        }
+        .readSize { size in
+            center = size.center
         }
         .gesture(
             DragGesture()
@@ -52,16 +38,18 @@ fileprivate struct GestureView<Content: View>: View {
                     gestureContainer.ended()
                 }
         )
-    }
-    
-    private struct SpacerView<Content: View>: View {
-        let backgroundColor: Color
-        let content: () -> Content
-        
-        init(backgroundColor: Color = .white, content: @escaping () -> Content) {
-            self.backgroundColor = backgroundColor
-            self.content = content
+        .onChange(of: gestureContainer) { newValue in
+            if newValue.isActive {
+                let rotation = newValue.endPoint.angle(around: center)
+                angle = Angle(radians: rotation)
+            }
         }
+    }
+}
+
+extension RotationalGestureView {
+    private struct SpacerView<Content: View>: View {
+        let content: () -> Content
         
         var body: some View {
             VStack (alignment: .center) {
@@ -75,7 +63,7 @@ fileprivate struct GestureView<Content: View>: View {
                 }
                 Spacer()
             }
-            .background(backgroundColor)
+            .contentShape(Rectangle())
         }
     }
 }

@@ -8,23 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var angle: Angle = .zero
-    @State var velocity: CGFloat = .zero
-    @State var previousAngle: Angle = .zero
+    @State var state = RotaryView.State(speed: 0, angularSpeed: 0, angle: 0)
     
     var body: some View {
-        VStack(alignment: .center) {
-            RotaryGestureView(angle: $angle) {
-                RotaryKnobView(rotation: .zero, velocity: $velocity)
-            }
-        }
-        .background(.white)
-        .frame(width: 400, height: 400)
-        .onChange(of: angle) { newValue in
-            velocity = newValue.radians - previousAngle.radians
-            previousAngle = newValue
-            print(velocity)
-        }
+        RotaryView(sensitivity: 1, startAngle: 0, state: $state)
+            .background(.white)
+            .frame(width: 400, height: 400)
     }
 }
 

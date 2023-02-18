@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AppGesture {
+struct RotationalDragGesture {
     var isActive: Bool = false
     var startPoint: CGPoint = .zero
     var translation: CGPoint = .zero
@@ -35,7 +35,7 @@ struct AppGesture {
 
 // MARK: - Public methods
 
-extension AppGesture {
+extension RotationalDragGesture {
     func speed() -> CGFloat? {
         guard isActive else {
             return nil
@@ -47,7 +47,7 @@ extension AppGesture {
 
 // MARK: - Operators
 
-extension AppGesture: Equatable {
+extension RotationalDragGesture: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.isActive == rhs.isActive
         && lhs.startPoint == rhs.startPoint
