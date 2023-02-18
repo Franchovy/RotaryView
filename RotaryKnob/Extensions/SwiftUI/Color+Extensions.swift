@@ -22,8 +22,6 @@ extension Color {
     static func hex(rgba hex: Int) -> Self {
         let (a, r, g, b) = (hex >> 24, hex >> 16 & 0xFF, hex >> 8 & 0xFF, hex & 0xFF)
         
-        print(a, r, g, b)
-        
         return .init(
             red: Double(r) / 255,
             green: Double(g) / 255,
