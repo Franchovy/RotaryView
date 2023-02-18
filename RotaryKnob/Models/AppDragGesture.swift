@@ -47,7 +47,7 @@ extension AppDragGesture {
         let relativePoint = (center - endPoint)
         let offset = relativePoint.x > 0 ? .pi : 0
         
-        return offset - relativePoint.inverseTangent
+        return relativePoint.inverseTangent - offset + .pi / 2
     }
 }
 

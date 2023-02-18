@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var state = RotaryView.State(speed: 0, angularSpeed: 0, angle: 0)
     
     var body: some View {
-        RotaryView(sensitivity: 1, startAngle: 0, state: $state)
+        RotaryView(sensitivity: 3, startAngle: 45, state: $state)
             .background(.white)
             .frame(width: 400, height: 400)
     }
