@@ -53,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B93C59CF29A125BF001F602F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		B9C5F601299D41AC00658BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +80,7 @@
 		B9C5F60C299D41AC00658BE7 /* RotaryKnob */ = {
 			isa = PBXGroup;
 			children = (
+				B93C59CF29A125BF001F602F /* Features */,
 				B9C5F61F299D421E00658BE7 /* Extensions */,
 				B9C5F61C299D41CE00658BE7 /* Components */,
 				B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */,
@@ -94,7 +103,6 @@
 		B9C5F61C299D41CE00658BE7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B9C5F61D299D41E200658BE7 /* RotaryKnobView.swift */,
 				B9C5F629299E69F900658BE7 /* RotaryGestureView.swift */,
 				B9C5F633299F85C100658BE7 /* AppGesture.swift */,
 			);

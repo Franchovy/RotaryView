@@ -36,33 +36,12 @@ struct AppGesture {
 // MARK: - Public methods
 
 extension AppGesture {
-    
     func speed() -> CGFloat? {
         guard isActive else {
             return nil
         }
         
         return (endPoint - previousPoint).length
-    }
-    
-    func rotation(around center: CGPoint) -> CGFloat? {
-        guard isActive else {
-            return nil
-        }
-        
-        return angle(from: endPoint, center: center)
-    }
-}
-
-// MARK: - Private methods
-
-extension AppGesture {
-    
-    private func angle(from point: CGPoint, center: CGPoint) -> CGFloat {
-        let relativePoint = (center - point)
-        let offset = relativePoint.x > 0 ? .pi : 0
-        
-        return offset - relativePoint.inverseTangent
     }
 }
 

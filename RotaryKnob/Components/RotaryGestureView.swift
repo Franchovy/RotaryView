@@ -23,7 +23,7 @@ struct RotaryGestureView<Content: View>: View {
         }
         .onChange(of: gestureContainer) { newValue in
             if newValue.isActive {
-                let rotation = newValue.rotation(around: center)!
+                let rotation = newValue.endPoint.angle(around: center)
                 
                 angle = Angle(radians: rotation)
             }
