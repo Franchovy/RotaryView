@@ -19,7 +19,7 @@
 		B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */; };
 		B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */; };
 		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
-		B9C5F634299F85C100658BE7 /* AppGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* AppGesture.swift */; };
+		B9C5F634299F85C100658BE7 /* AppDragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* AppDragGesture.swift */; };
 		B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */; };
 		B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 		B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationalGestureView.swift; sourceTree = "<group>"; };
 		B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
-		B9C5F633299F85C100658BE7 /* AppGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGesture.swift; sourceTree = "<group>"; };
+		B9C5F633299F85C100658BE7 /* AppDragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDragGesture.swift; sourceTree = "<group>"; };
 		B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 		B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 		B93C59D429A12A3A001F602F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B9C5F633299F85C100658BE7 /* AppGesture.swift */,
+				B9C5F633299F85C100658BE7 /* AppDragGesture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */,
 				B93C59DB29A12C49001F602F /* KnobView.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
-				B9C5F634299F85C100658BE7 /* AppGesture.swift in Sources */,
+				B9C5F634299F85C100658BE7 /* AppDragGesture.swift in Sources */,
 				B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */,
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
 				B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */,

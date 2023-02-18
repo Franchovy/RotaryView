@@ -7,47 +7,36 @@
 
 import SwiftUI
 
-struct RotationalGestureView<Content: View>: View {
-    let content: (RotationalDragGesture, Angle) -> Content
+struct GestureView<Content: View>: View {
+    let content: (AppDragGesture) -> Content
     
-    @State private var gestureContainer = RotationalDragGesture()
-    @State private var angle: Angle = .zero
-    @State private var center: CGPoint = .zero
+    @State private var gesture = AppDragGesture()
     
-    init(content: @escaping (RotationalDragGesture, Angle) -> Content) {
+    init(content: @escaping (AppDragGesture) -> Content) {
         self.content = content
     }
     
     var body: some View {
         SpacerView {
-            content(gestureContainer, angle)
-        }
-        .readSize { size in
-            center = size.center
+            content(gesture)
         }
         .gesture(
             DragGesture()
-                .onChanged { dragGesture in
-                    if !gestureContainer.isActive {
-                        gestureContainer.began(dragGesture.location)
+                .onChanged {
+                    if !gesture.isActive {
+                        gesture.began($0.location)
                     } else {
-                        gestureContainer.updated(dragGesture.location)
+                        gesture.updated($0.location)
                     }
                 }
                 .onEnded { _ in
-                    gestureContainer.ended()
+                    gesture.ended()
                 }
         )
-        .onChange(of: gestureContainer) { newValue in
-            if newValue.isActive {
-                let rotation = newValue.endPoint.angle(around: center)
-                angle = Angle(radians: rotation)
-            }
-        }
     }
 }
 
-extension RotationalGestureView {
+extension GestureView {
     private struct SpacerView<Content: View>: View {
         let content: () -> Content
         

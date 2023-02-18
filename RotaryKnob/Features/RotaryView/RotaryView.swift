@@ -17,21 +17,33 @@ extension RotaryView {
 
 struct RotaryView: View {
     let sensitivity: Int
-    @SwiftUI.State var rotation: Angle
+    @SwiftUI.State var angle: Angle
     @Binding var state: State
+    
+    @SwiftUI.State private var center: CGPoint = .zero
+    @SwiftUI.State private var previousAngle: Angle = .zero
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
         self.sensitivity = sensitivity
-        self.rotation = Angle(radians: startAngle)
+        self.angle = Angle(radians: startAngle)
         self._state = state
     }
     
     var body: some View {
-        RotationalGestureView { gesture, angle in
+        GestureView { gesture in
             KnobView()
                 .rotationEffect(
-                    Angle(radians: .pi / 2) - rotation
+                    Angle(radians: .pi / 2 - gesture.angle(around: center))
                 )
+                .onChange(of: gesture) {
+                    if gesture.isActive {
+                        previousAngle = angle
+                        angle = Angle(radians: $0.angle(around: center))
+                    }
+                }
+        }
+        .readSize { size in
+            center = size.center
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

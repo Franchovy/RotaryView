@@ -15,11 +15,4 @@ extension CGPoint {
     var length: CGFloat {
         return hypot(x, y)
     }
-    
-    func angle(around center: CGPoint) -> CGFloat {
-        let relativePoint = (center - self)
-        let offset = relativePoint.x > 0 ? .pi : 0
-        
-        return offset - relativePoint.inverseTangent
-    }
 }
