@@ -50,6 +50,9 @@ struct RotaryView: View {
             guard let timeInterval = gesture.timeInterval,
                   let angularChange = gesture.angularChange(around: center) else { return }
             
+            // Ignore small time intervals to avoid "jumpy" behaviour
+            guard timeInterval > 0.007 else { return }
+            
             let angularSpeed = angularChange / timeInterval
             let speed = angularSpeed.degrees * (sensitivity / 10)
             
