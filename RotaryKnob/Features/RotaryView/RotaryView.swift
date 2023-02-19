@@ -24,7 +24,7 @@ struct RotaryView: View {
     @SwiftUI.State private var center: CGPoint = .zero
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
-        self.sensitivity = Double(sensitivity)
+        self.sensitivity = Double(sensitivity) / 5
         self.offset = Angle(degrees: startAngle)
         self._state = state
     }
