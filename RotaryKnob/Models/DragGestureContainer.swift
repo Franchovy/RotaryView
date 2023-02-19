@@ -34,6 +34,25 @@ struct DragGestureContainer {
     }
 }
 
+extension DragGestureContainer {
+    var timeInterval: TimeInterval? {
+        if let previousTime {
+            return gesture?.time.timeIntervalSince(previousTime)
+        }
+        return nil
+    }
+    
+    func angularChange(around center: CGPoint) -> Angle? {
+        if let gesture, let previousLocation {
+            return Angle(radians: gesture.location.angle(around: center)
+                         - previousLocation.angle(around: center))
+        } else if gesture != nil {
+            return Angle(radians: 0)
+        }
+        return nil
+    }
+}
+
 extension DragGestureContainer: Equatable {
     static func ==(lhs: Self, rhs: Self) -> Bool {
         return lhs.gesture == rhs.gesture

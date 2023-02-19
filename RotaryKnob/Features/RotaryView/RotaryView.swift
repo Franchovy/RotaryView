@@ -47,23 +47,19 @@ struct RotaryView: View {
     
     private func updateState(gesture: DragGestureContainer) {
         if gesture.isActive {
+            guard let timeInterval = gesture.timeInterval,
+                  let angularChange = gesture.angularChange(around: center) else { return }
             
-            guard let previousTime = gesture.previousTime,
-                  let previousLocation = gesture.previousLocation else { return }
-            
-            let angle = Angle(radians: gesture.gesture!.location.angle(around: center))
-            let previousAngle = Angle(radians: previousLocation.angle(around: center))
-            
-            let timeChange = gesture.gesture!.time.timeIntervalSince(previousTime)
-            let change = angle - previousAngle
-            let angularSpeed = change / timeChange
+            let angularSpeed = angularChange / timeInterval
+            let speed = angularSpeed.degrees * (sensitivity / 10)
             
             state = State(
-                speed: Int(sensitivity / 10 * angularSpeed.degrees),
+                speed: Int(speed),
                 angularSpeed: angularSpeed.degrees,
-                angle: state.angle + angularSpeed.degrees * (sensitivity / 10)
+                angle: state.angle + speed
             )
         } else {
+            // Gesture ended
             state = State(
                 speed: 0,
                 angularSpeed: 0,
