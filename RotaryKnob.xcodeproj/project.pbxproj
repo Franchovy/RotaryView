@@ -19,7 +19,7 @@
 		B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */; };
 		B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */; };
 		B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */; };
-		B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */; };
+		B9C5F632299EF4F400658BE7 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F631299EF4F400658BE7 /* CGRect+Extensions.swift */; };
 		B9C5F634299F85C100658BE7 /* DragGestureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* DragGestureContainer.swift */; };
 		B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */; };
 		B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */; };
@@ -42,7 +42,7 @@
 		B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationalGestureView.swift; sourceTree = "<group>"; };
 		B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
+		B9C5F631299EF4F400658BE7 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		B9C5F633299F85C100658BE7 /* DragGestureContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureContainer.swift; sourceTree = "<group>"; };
 		B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 		B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				B9C5F622299D430400658BE7 /* SwiftUI */,
 				B9C5F620299D422900658BE7 /* CGFloat+Extensions.swift */,
 				B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */,
-				B9C5F631299EF4F400658BE7 /* CGSize+Extensions.swift */,
+				B9C5F631299EF4F400658BE7 /* CGRect+Extensions.swift */,
 				B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */,
 			);
 			path = Extensions;
@@ -235,7 +235,7 @@
 				B9D5FEC029A26C920014EB0E /* Formatter+Extensions.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F634299F85C100658BE7 /* DragGestureContainer.swift in Sources */,
-				B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */,
+				B9C5F632299EF4F400658BE7 /* CGRect+Extensions.swift in Sources */,
 				B9C5F621299D422900658BE7 /* CGFloat+Extensions.swift in Sources */,
 				B9C5F62E299EF03500658BE7 /* CGPoint+Extensions.swift in Sources */,
 				B9C5F624299D431100658BE7 /* View+Extensions.swift in Sources */,

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct GestureView<Content: View>: View {
+    let coordinateSpace: CoordinateSpace?
     let content: (DragGestureContainer) -> Content
     
     @State private var gesture = DragGestureContainer()
     
-    init(content: @escaping (DragGestureContainer) -> Content) {
+    init(coordinateSpace: CoordinateSpace? = nil, content: @escaping (DragGestureContainer) -> Content) {
+        self.coordinateSpace = coordinateSpace
         self.content = content
     }
     
@@ -21,7 +23,7 @@ struct GestureView<Content: View>: View {
             content(gesture)
         }
         .gesture(
-            DragGesture()
+            DragGesture(coordinateSpace: .global)
                 .onChanged {
                     if !gesture.isActive {
                         gesture.began($0)
