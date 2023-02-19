@@ -11,7 +11,9 @@ import SwiftUI
 struct RotaryKnobApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            
+            TestView()
         }
     }
 }

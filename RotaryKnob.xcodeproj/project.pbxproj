@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B93C59D929A12A74001F602F /* RotaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59D829A12A74001F602F /* RotaryView.swift */; };
 		B93C59DB29A12C49001F602F /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59DA29A12C49001F602F /* KnobView.swift */; };
+		B93C59DF29A16EB9001F602F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59DE29A16EB9001F602F /* TestView.swift */; };
 		B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */; };
 		B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F60F299D41AC00658BE7 /* ContentView.swift */; };
 		B9C5F612299D41AE00658BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9C5F611299D41AE00658BE7 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		B93C59D829A12A74001F602F /* RotaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryView.swift; sourceTree = "<group>"; };
 		B93C59DA29A12C49001F602F /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
+		B93C59DE29A16EB9001F602F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B9C5F60A299D41AC00658BE7 /* RotaryKnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryKnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C5F60D299D41AC00658BE7 /* RotaryKnobApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobApp.swift; sourceTree = "<group>"; };
 		B9C5F60F299D41AC00658BE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B9C5F611299D41AE00658BE7 /* Assets.xcassets */,
 				B9C5F616299D41AE00658BE7 /* RotaryKnob.entitlements */,
 				B9C5F613299D41AE00658BE7 /* Preview Content */,
+				B93C59DE29A16EB9001F602F /* TestView.swift */,
 			);
 			path = RotaryKnob;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93C59DF29A16EB9001F602F /* TestView.swift in Sources */,
 				B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */,
 				B93C59DB29A12C49001F602F /* KnobView.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
