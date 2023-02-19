@@ -13,7 +13,7 @@ struct RotaryKnobApp: App {
         WindowGroup {
 //            ContentView()
             
-            TestView()
+            TestView(startAngle: -45, sensitivity: 3)
         }
     }
 }

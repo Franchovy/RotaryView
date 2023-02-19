@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct GestureView<Content: View>: View {
-    let content: (AppDragGesture) -> Content
+    let content: (DragGestureContainer) -> Content
     
-    @State private var gesture = AppDragGesture()
+    @State private var gesture = DragGestureContainer()
     
-    init(content: @escaping (AppDragGesture) -> Content) {
+    init(content: @escaping (DragGestureContainer) -> Content) {
         self.content = content
     }
     
@@ -24,13 +24,13 @@ struct GestureView<Content: View>: View {
             DragGesture()
                 .onChanged {
                     if !gesture.isActive {
-                        gesture.began($0.location)
+                        gesture.began($0)
                     } else {
-                        gesture.updated($0.location)
+                        gesture.updated($0)
                     }
                 }
-                .onEnded { _ in
-                    gesture.ended()
+                .onEnded {
+                    gesture.ended($0)
                 }
         )
     }

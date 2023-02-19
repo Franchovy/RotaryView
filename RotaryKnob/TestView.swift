@@ -20,11 +20,11 @@ struct TestView: View {
     
     @State var state: RotaryView.State = .init(speed: 0, angularSpeed: 0, angle: 0)
     
-    init() {
-        self.startAngle = .zero
-        self.sensitivity = .zero
-        self.inputStartAngle = .zero
-        self.inputSensitivity = .zero
+    init(startAngle: Double, sensitivity: Int) {
+        self.startAngle = startAngle
+        self.sensitivity = sensitivity
+        self.inputStartAngle = startAngle
+        self.inputSensitivity = sensitivity
         
         self.state = .init(speed: .zero, angularSpeed: .zero, angle: .zero)
         self.inputSpeed = .zero
