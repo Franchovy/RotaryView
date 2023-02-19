@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let INPUT_SENSITIVITY: Double = 0.4
+
 extension RotaryView {
     struct State {
         let speed: Int
@@ -25,7 +27,7 @@ struct RotaryView: View {
     @SwiftUI.State private var proxy: GeometryProxy?
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
-        self.sensitivity = Double(sensitivity)
+        self.sensitivity = Double(sensitivity) * INPUT_SENSITIVITY
         self.offset = Angle(degrees: startAngle)
         self._state = state
     }
@@ -62,12 +64,12 @@ struct RotaryView: View {
             guard timeInterval > 0.007 else { state = state.stopped; return }
             
             let angularSpeed = angularChange / timeInterval
-            let speed = angularSpeed.degrees * (sensitivity / 10)
+            let speed = angularSpeed * (sensitivity / 10)
             
             state = State(
-                speed: Int(speed),
+                speed: Int(speed.degrees),
                 angularSpeed: angularSpeed.degrees,
-                angle: state.angle + speed
+                angle: Angle(degrees: state.angle + speed.degrees).normalized().degrees
             )
         } else {
             // Gesture ended
