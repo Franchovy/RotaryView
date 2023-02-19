@@ -23,6 +23,8 @@
 		B9C5F634299F85C100658BE7 /* DragGestureContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F633299F85C100658BE7 /* DragGestureContainer.swift */; };
 		B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */; };
 		B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */; };
+		B9D5FEBC29A25F700014EB0E /* LabelledNumericalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5FEBB29A25F700014EB0E /* LabelledNumericalTextField.swift */; };
+		B9D5FEC029A26C920014EB0E /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5FEBF29A26C920014EB0E /* Formatter+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		B9C5F633299F85C100658BE7 /* DragGestureContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureContainer.swift; sourceTree = "<group>"; };
 		B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 		B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
+		B9D5FEBB29A25F700014EB0E /* LabelledNumericalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledNumericalTextField.swift; sourceTree = "<group>"; };
+		B9D5FEBF29A26C920014EB0E /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				B9C5F629299E69F900658BE7 /* RotationalGestureView.swift */,
+				B9D5FEBB29A25F700014EB0E /* LabelledNumericalTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				B9C5F623299D431100658BE7 /* View+Extensions.swift */,
 				B9C5F625299D43AE00658BE7 /* Color+Extensions.swift */,
 				B9C5F635299FA0BD00658BE7 /* View+ReadSize.swift */,
+				B9D5FEBF29A26C920014EB0E /* Formatter+Extensions.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				B93C59DF29A16EB9001F602F /* TestView.swift in Sources */,
 				B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */,
 				B93C59DB29A12C49001F602F /* KnobView.swift in Sources */,
+				B9D5FEC029A26C920014EB0E /* Formatter+Extensions.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F634299F85C100658BE7 /* DragGestureContainer.swift in Sources */,
 				B9C5F632299EF4F400658BE7 /* CGSize+Extensions.swift in Sources */,
@@ -235,6 +242,7 @@
 				B9C5F636299FA0BD00658BE7 /* View+ReadSize.swift in Sources */,
 				B9C5F60E299D41AC00658BE7 /* RotaryKnobApp.swift in Sources */,
 				B93C59D929A12A74001F602F /* RotaryView.swift in Sources */,
+				B9D5FEBC29A25F700014EB0E /* LabelledNumericalTextField.swift in Sources */,
 				B9C5F638299FA11900658BE7 /* CGPoint+Trigonometry.swift in Sources */,
 				B9C5F626299D43AE00658BE7 /* Color+Extensions.swift in Sources */,
 			);

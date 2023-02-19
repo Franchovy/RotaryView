@@ -14,10 +14,11 @@ struct TestView: View {
     @State var inputStartAngle: Double
     @State var inputSensitivity: Int
     
-    @State var inputSpeed: Double
+    @State var inputSpeed: Int
     @State var inputAngularSpeed: Double
     @State var inputAngle: Double
     
+    let initState: RotaryView.State
     @State var state: RotaryView.State = .init(speed: 0, angularSpeed: 0, angle: 0)
     
     init(startAngle: Double, sensitivity: Int) {
@@ -26,47 +27,65 @@ struct TestView: View {
         self.inputStartAngle = startAngle
         self.inputSensitivity = sensitivity
         
-        self.state = .init(speed: .zero, angularSpeed: .zero, angle: .zero)
-        self.inputSpeed = .zero
-        self.inputAngularSpeed = .zero
-        self.inputAngle = .zero
+        let state = RotaryView.State(speed: .zero, angularSpeed: .zero, angle: .zero)
+        self.state = state
+        self.initState = state
+        
+        self.inputSpeed = state.speed
+        self.inputAngularSpeed = state.angularSpeed
+        self.inputAngle = state.angle
     }
     
     var body: some View {
         HStack {
-            VStack {
+            VStack (spacing: 5) {
                 Text("Initializer properties")
-                TextField("Start Angle", value: $inputStartAngle, format: .number)
-                TextField("Sensitivity", value: $inputSensitivity, format: .number)
+                    .font(.title3)
+                
+                LabelledNumericalTextField(title: "Start Angle", value: $inputStartAngle)
+                LabelledNumericalTextField(title: "Sensitivity", value: $inputSensitivity, formatter: .ranged(min: 1, max: 10))
                 
                 Button("Reset") {
                     resetState(sensitivity: inputSensitivity, startAngle: inputStartAngle)
                 }
                 
-                Text("Live properties (State)")
+                Spacer()
+                    .frame(maxHeight: 15)
                 
-//                TextField("Speed", value: $inputSpeed, format: .number)
-//                TextField("Angular Speed", value: $inputAngularSpeed, format: .number)
-                TextField("Angle", value: $inputAngle, format: .number)
-                    .onChange(of: inputAngle) { newValue in
-                        state = .init(
-                            angularSpeed: .zero,
-                            sensitivity: sensitivity,
-                            angle: inputAngle
-                        )
-                    }
+                Text("Live properties (State)")
+                    .font(.title3)
+                
+                LabelledNumericalTextField(title: "Speed", value: $inputSpeed)
+                LabelledNumericalTextField(title: "Angular Speed", value: $inputAngularSpeed)
+                LabelledNumericalTextField(title: "Angle", value: $inputAngle)
             }
             
             RotaryView(sensitivity: sensitivity, startAngle: startAngle, state: $state)
                 .background(.white)
                 .frame(width: 400, height: 400)
+                .onChange(of: state) {
+                    updateStateDisplay($0)
+                }
         }
         .frame(width: 600)
+    }
+    
+    private func cleanInput() {
+        if inputSensitivity > 10 { inputSensitivity = 10 }
+        if inputSensitivity < 1 { inputSensitivity = 1 }
     }
     
     private func resetState(sensitivity: Int, startAngle: Double) {
         self.sensitivity = sensitivity
         self.startAngle = startAngle
+        
+        self.state = initState
+    }
+    
+    private func updateStateDisplay(_ state: RotaryView.State) {
+        self.inputSpeed = state.speed
+        self.inputAngularSpeed = state.angularSpeed
+        self.inputAngle = state.angle
     }
 }
 

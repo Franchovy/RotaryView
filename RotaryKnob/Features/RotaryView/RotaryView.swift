@@ -51,7 +51,7 @@ struct RotaryView: View {
                   let angularChange = gesture.angularChange(around: center) else { return }
             
             // Ignore small time intervals to avoid "jumpy" behaviour
-            guard timeInterval > 0.007 else { return }
+            guard timeInterval > 0.007 else { state = state.stopped; return }
             
             let angularSpeed = angularChange / timeInterval
             let speed = angularSpeed.degrees * (sensitivity / 10)
@@ -63,11 +63,25 @@ struct RotaryView: View {
             )
         } else {
             // Gesture ended
-            state = State(
-                speed: 0,
-                angularSpeed: 0,
-                angle: state.angle
-            )
+            state = state.stopped
         }
+    }
+}
+
+extension RotaryView.State {
+    var stopped: Self {
+        return .init(
+            speed: 0,
+            angularSpeed: 0,
+            angle: angle
+        )
+    }
+}
+
+extension RotaryView.State: Equatable {
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.speed == rhs.speed
+            && lhs.angularSpeed == rhs.angularSpeed
+            && lhs.angle == rhs.angle
     }
 }
