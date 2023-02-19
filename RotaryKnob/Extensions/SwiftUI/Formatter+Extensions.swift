@@ -17,6 +17,8 @@ extension Formatter {
     }
 }
 
+// This class is here because it's not important to the app, just for the TestView.
+// It has also been ripped from StackOverflow :)
 class NumericalRangedFormatter: Formatter {
     var min: Int
     var max: Int
@@ -48,8 +50,8 @@ class NumericalRangedFormatter: Formatter {
         guard let number = obj as? Int else {
             return nil
         }
-        return String(number)
         
+        return String(number)
     }
     
     override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
