@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let INPUT_SENSITIVITY: Double = 0.4
+let INPUT_SENSITIVITY: Double = 0.05
 
 extension RotaryView {
     struct State {
