@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let INPUT_SENSITIVITY: Double = 0.05
+
 extension RotaryView {
     struct State {
         let speed: Int
@@ -22,9 +24,10 @@ struct RotaryView: View {
     @Binding var state: State
     
     @SwiftUI.State private var center: CGPoint = .zero
+    @SwiftUI.State private var proxy: GeometryProxy?
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
-        self.sensitivity = Double(sensitivity) / 5
+        self.sensitivity = Double(sensitivity) * INPUT_SENSITIVITY
         self.offset = Angle(degrees: startAngle)
         self._state = state
     }
@@ -38,28 +41,35 @@ struct RotaryView: View {
                 .onChange(of: gesture) {
                     updateState(gesture: $0)
                 }
-        }
-        .readSize { size in
-            center = size.center
+                .readGeometry {
+                    proxy = $0
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     private func updateState(gesture: DragGestureContainer) {
         if gesture.isActive {
+            // Ignore movements inside the rotational knob
+            guard let frame = proxy?.frame(in: .global),
+                  !frame.contains(gesture.gesture!.location)
+                else {
+                return
+            }
+            
             guard let timeInterval = gesture.timeInterval,
-                  let angularChange = gesture.angularChange(around: center) else { return }
+                  let angularChange = gesture.angularChange(around: frame.center) else { return }
             
             // Ignore small time intervals to avoid "jumpy" behaviour
             guard timeInterval > 0.007 else { state = state.stopped; return }
             
             let angularSpeed = angularChange / timeInterval
-            let speed = angularSpeed.degrees * (sensitivity / 10)
+            let speed = angularSpeed * (sensitivity / 10)
             
             state = State(
-                speed: Int(speed),
+                speed: Int(speed.degrees),
                 angularSpeed: angularSpeed.degrees,
-                angle: state.angle + speed
+                angle: Angle(degrees: state.angle + speed.degrees).normalized().degrees
             )
         } else {
             // Gesture ended
