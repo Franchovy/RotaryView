@@ -27,8 +27,20 @@ extension Angle {
             return (self + .circumference).normalized()
         } else if self > .circumference {
             return (self - .circumference).normalized()
-        } else {
-            return self
         }
+        
+        return self
+    }
+    
+    static func subtractNormalized(lhs: Angle, rhs: Angle) -> Angle {
+        let difference = lhs - rhs
+        
+        if difference < -.halfCircumference {
+            return subtractNormalized(lhs: lhs + .circumference, rhs: rhs)
+        } else if difference > .halfCircumference {
+            return subtractNormalized(lhs: lhs - .circumference, rhs: rhs)
+        }
+        
+        return difference
     }
 }

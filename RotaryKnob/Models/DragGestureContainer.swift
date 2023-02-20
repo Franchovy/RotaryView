@@ -44,8 +44,10 @@ extension DragGestureContainer {
     
     func angularChange(around center: CGPoint) -> Angle? {
         if let gesture, let previousLocation {
-            return Angle(radians: gesture.location.angle(around: center)
-                         - previousLocation.angle(around: center))
+            return .subtractNormalized(
+                lhs: Angle(radians: gesture.location.angle(around: center)),
+                rhs: Angle(radians: previousLocation.angle(around: center))
+            )
         } else if gesture != nil {
             return Angle(radians: 0)
         }
