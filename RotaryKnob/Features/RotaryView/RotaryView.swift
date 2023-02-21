@@ -8,6 +8,7 @@
 import SwiftUI
 
 let INPUT_SENSITIVITY: Double = 0.05
+let INNER_RADIUS_IGNORED_SIZE: Double = 4.0
 
 extension RotaryView {
     struct State {
@@ -33,26 +34,23 @@ struct RotaryView: View {
     }
     
     var body: some View {
-        GestureView { gesture in
-            KnobView()
-                .rotationEffect(
-                    Angle(degrees: state.angle) + offset
-                )
-                .onChange(of: gesture) {
-                    updateState(gesture: $0)
-                }
-                .readGeometry {
-                    proxy = $0
-                }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        KnobView()
+            .rotationEffect(
+                Angle(degrees: state.angle) + offset
+            )
+            .onChange(of: gesture) {
+                updateState(gesture: $0)
+            }
+            .readGeometry {
+                proxy = $0
+            }
     }
     
     private func updateState(gesture: DragGestureContainer) {
         if gesture.isActive {
             // Ignore movements inside the rotational knob
             guard let frame = proxy?.frame(in: .global),
-                  !frame.contains(gesture.gesture!.location)
+                  frame.center.distanceTo(gesture.gesture!.location) > INNER_RADIUS_IGNORED_SIZE
                 else {
                 return
             }
