@@ -14,10 +14,6 @@ struct TestView: View {
     @State var inputStartAngle: Double
     @State var inputSensitivity: Int
     
-    @State var inputSpeed: Int
-    @State var inputAngularSpeed: Double
-    @State var inputAngle: Double
-    
     @State var state: RotaryView.State = .init(speed: 0, angularSpeed: 0, angle: 0)
     
     init(startAngle: Double, sensitivity: Int) {
@@ -28,10 +24,6 @@ struct TestView: View {
         
         let state = RotaryView.State(speed: .zero, angularSpeed: .zero, angle: .zero)
         self.state = state
-        
-        self.inputSpeed = state.speed
-        self.inputAngularSpeed = state.angularSpeed
-        self.inputAngle = state.angle
     }
     
     var body: some View {
@@ -40,8 +32,8 @@ struct TestView: View {
                 Text("Initializer properties")
                     .font(.title3)
                 
-                LabelledNumericalTextField(title: "Start Angle", value: $inputStartAngle)
-                LabelledNumericalTextField(title: "Sensitivity", value: $inputSensitivity, formatter: .ranged(min: 1, max: 10))
+                LabelledNumericalTextField(title: "Start Angle (deg.)", value: $inputStartAngle)
+                LabelledNumericalTextField(title: "Sensitivity (1-10)", value: $inputSensitivity, formatter: .ranged(min: 1, max: 10))
                 
                 Button("Reset") {
                     resetState(sensitivity: inputSensitivity, startAngle: inputStartAngle)
@@ -53,17 +45,14 @@ struct TestView: View {
                 Text("Live properties (State)")
                     .font(.title3)
                 
-                LabelledNumericalTextField(title: "Speed", value: $inputSpeed)
-                LabelledNumericalTextField(title: "Angular Speed", value: $inputAngularSpeed)
-                LabelledNumericalTextField(title: "Angle", value: $inputAngle)
+                LabelledNumericalTextField(title: "Speed (px. per second)", value: $state.speed)
+                LabelledNumericalTextField(title: "Angular Speed (deg. per second)", value: $state.angularSpeed)
+                LabelledNumericalTextField(title: "Angle (deg.)", value: $state.angle)
             }
             
             RotaryView(sensitivity: sensitivity, startAngle: startAngle, state: $state)
                 .background(.white)
                 .frame(width: 400, height: 400)
-                .onChange(of: state) {
-                    updateStateDisplay($0)
-                }
         }
         .frame(width: 600)
     }
@@ -78,12 +67,6 @@ struct TestView: View {
         self.startAngle = startAngle
         
         self.state = .init(angle: startAngle)
-    }
-    
-    private func updateStateDisplay(_ state: RotaryView.State) {
-        self.inputSpeed = state.speed
-        self.inputAngularSpeed = state.angularSpeed
-        self.inputAngle = state.angle
     }
 }
 
