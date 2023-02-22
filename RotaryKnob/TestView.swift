@@ -18,7 +18,6 @@ struct TestView: View {
     @State var inputAngularSpeed: Double
     @State var inputAngle: Double
     
-    let initState: RotaryView.State
     @State var state: RotaryView.State = .init(speed: 0, angularSpeed: 0, angle: 0)
     
     init(startAngle: Double, sensitivity: Int) {
@@ -29,7 +28,6 @@ struct TestView: View {
         
         let state = RotaryView.State(speed: .zero, angularSpeed: .zero, angle: .zero)
         self.state = state
-        self.initState = state
         
         self.inputSpeed = state.speed
         self.inputAngularSpeed = state.angularSpeed
@@ -79,7 +77,7 @@ struct TestView: View {
         self.sensitivity = sensitivity
         self.startAngle = startAngle
         
-        self.state = initState
+        self.state = .init(angle: startAngle)
     }
     
     private func updateStateDisplay(_ state: RotaryView.State) {
@@ -90,9 +88,9 @@ struct TestView: View {
 }
 
 fileprivate extension RotaryView.State {
-    init(angularSpeed: Double, sensitivity: Int, angle: Double) {
-        self.speed = Int(angularSpeed * Double(sensitivity) / 10)
-        self.angularSpeed = angularSpeed
+    init(angle: Double) {
+        self.speed = .zero
+        self.angularSpeed = .zero
         self.angle = angle
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B912E35A29A6737400BF4772 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912E35929A6737400BF4772 /* CGSize+Extensions.swift */; };
 		B93C59D929A12A74001F602F /* RotaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59D829A12A74001F602F /* RotaryView.swift */; };
 		B93C59DB29A12C49001F602F /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59DA29A12C49001F602F /* KnobView.swift */; };
 		B93C59DF29A16EB9001F602F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C59DE29A16EB9001F602F /* TestView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B912E35929A6737400BF4772 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		B93C59D829A12A74001F602F /* RotaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryView.swift; sourceTree = "<group>"; };
 		B93C59DA29A12C49001F602F /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		B93C59DE29A16EB9001F602F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				B9C5F62D299EF03500658BE7 /* CGPoint+Extensions.swift */,
 				B9C5F631299EF4F400658BE7 /* CGRect+Extensions.swift */,
 				B9C5F637299FA11900658BE7 /* CGPoint+Trigonometry.swift */,
+				B912E35929A6737400BF4772 /* CGSize+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B9C5F62A299E69F900658BE7 /* RotationalGestureView.swift in Sources */,
 				B93C59DB29A12C49001F602F /* KnobView.swift in Sources */,
 				B9D5FEC029A26C920014EB0E /* Formatter+Extensions.swift in Sources */,
+				B912E35A29A6737400BF4772 /* CGSize+Extensions.swift in Sources */,
 				B9C5F610299D41AC00658BE7 /* ContentView.swift in Sources */,
 				B9C5F634299F85C100658BE7 /* DragGestureContainer.swift in Sources */,
 				B9C5F632299EF4F400658BE7 /* CGRect+Extensions.swift in Sources */,

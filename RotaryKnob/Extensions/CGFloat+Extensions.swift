@@ -32,4 +32,8 @@ extension CGFloat {
     var sign: CGFloat {
         self >= 0 ? 1.0 : -1.0
     }
+    
+    var negated: CGFloat {
+        -self
+    }
 }

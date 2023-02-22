@@ -7,29 +7,37 @@
 
 import SwiftUI
 
-let INPUT_SENSITIVITY: Double = 0.05
+let INPUT_SENSITIVITY: Double = 0.5
 let INNER_RADIUS_IGNORED_SIZE: Double = 4.0
 
 extension RotaryView {
     struct State {
-        let speed: Int
-        let angularSpeed: Double
-        let angle: Double
+        var speed: Int
+        var angularSpeed: Double
+        var angle: Double
     }
 }
 
 struct RotaryView: View {
     let sensitivity: Double
-    let offset: Angle
     
     @Binding var state: State
     
+    @SwiftUI.State var externalStartAngle: Double {
+        didSet {
+            print(gestureStartAngle)
+        }
+    }
+    @SwiftUI.State var gestureStartAngle: CGFloat
+    @SwiftUI.State private var previousAngle: Angle
     @SwiftUI.State private var center: CGPoint = .zero
     @SwiftUI.State private var proxy: GeometryProxy?
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
         self.sensitivity = Double(sensitivity) * INPUT_SENSITIVITY
-        self.offset = Angle(degrees: startAngle)
+        self._gestureStartAngle = SwiftUI.State(wrappedValue: CGFloat(startAngle))
+        self._previousAngle = SwiftUI.State(wrappedValue: Angle(degrees: startAngle))
+        self._externalStartAngle = SwiftUI.State(wrappedValue: startAngle)
         self._state = state
     }
     
@@ -37,7 +45,7 @@ struct RotaryView: View {
         GestureView { gesture in
             KnobView()
                 .rotationEffect(
-                    Angle(degrees: state.angle) + offset
+                    Angle(degrees: state.angle)
                 )
                 .onChange(of: gesture) {
                     updateState(gesture: $0)
@@ -58,22 +66,25 @@ struct RotaryView: View {
             }
             
             guard let timeInterval = gesture.timeInterval,
-                  let angularChange = gesture.angularChange(around: frame.center) else { return }
+                  let translation = gesture.gesture?.translation.height.negated else { return }
             
             // Ignore small time intervals to avoid "jumpy" behaviour
             guard timeInterval > 0.007 else { state = state.stopped; return }
             
-            let angularSpeed = angularChange / timeInterval
-            let speed = angularSpeed * (sensitivity / 10)
+            let angle = Angle(degrees: gestureStartAngle + translation * (sensitivity / 10)).normalized()
+            let angularSpeed = (angle - previousAngle).degrees / timeInterval
+            previousAngle = angle
             
             state = State(
-                speed: Int(speed.degrees),
-                angularSpeed: angularSpeed.degrees,
-                angle: Angle(degrees: state.angle + speed.degrees).normalized().degrees
+                speed: Int(angularSpeed * (sensitivity / 10)),
+                angularSpeed: angularSpeed,
+                angle: angle.degrees
             )
         } else {
             // Gesture ended
             state = state.stopped
+            previousAngle = Angle(degrees: state.angle)
+            gestureStartAngle = state.angle
         }
     }
 }
