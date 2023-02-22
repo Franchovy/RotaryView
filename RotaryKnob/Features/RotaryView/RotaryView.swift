@@ -34,16 +34,18 @@ struct RotaryView: View {
     }
     
     var body: some View {
-        KnobView()
-            .rotationEffect(
-                Angle(degrees: state.angle) + offset
-            )
-            .onChange(of: gesture) {
-                updateState(gesture: $0)
-            }
-            .readGeometry {
-                proxy = $0
-            }
+        GestureView { gesture in
+            KnobView()
+                .rotationEffect(
+                    Angle(degrees: state.angle) + offset
+                )
+                .onChange(of: gesture) {
+                    updateState(gesture: $0)
+                }
+                .readGeometry {
+                    proxy = $0
+                }
+        }
     }
     
     private func updateState(gesture: DragGestureContainer) {

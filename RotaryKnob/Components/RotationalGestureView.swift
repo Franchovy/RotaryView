@@ -21,20 +21,20 @@ struct GestureView<Content: View>: View {
     var body: some View {
         SpacerView {
             content(gesture)
+                .gesture(
+                    DragGesture(coordinateSpace: .global)
+                        .onChanged {
+                            if !gesture.isActive {
+                                gesture.began($0)
+                            } else {
+                                gesture.updated($0)
+                            }
+                        }
+                        .onEnded {
+                            gesture.ended($0)
+                        }
+                )
         }
-        .gesture(
-            DragGesture(coordinateSpace: .global)
-                .onChanged {
-                    if !gesture.isActive {
-                        gesture.began($0)
-                    } else {
-                        gesture.updated($0)
-                    }
-                }
-                .onEnded {
-                    gesture.ended($0)
-                }
-        )
     }
 }
 
