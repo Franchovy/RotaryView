@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let INPUT_SENSITIVITY: Double = 0.5
+let INPUT_SENSITIVITY: Double = 0.7
 let INNER_RADIUS_IGNORED_SIZE: Double = 4.0
 
 extension RotaryView {
@@ -20,24 +20,19 @@ extension RotaryView {
 
 struct RotaryView: View {
     let sensitivity: Double
+    let startAngle: Double
     
     @Binding var state: State
     
-    @SwiftUI.State var externalStartAngle: Double {
-        didSet {
-            print(gestureStartAngle)
-        }
-    }
-    @SwiftUI.State var gestureStartAngle: CGFloat
-    @SwiftUI.State private var previousAngle: Angle
+    @SwiftUI.State var gestureStartAngle: CGFloat = .zero
+    @SwiftUI.State private var previousAngle: Angle = .zero
     @SwiftUI.State private var center: CGPoint = .zero
     @SwiftUI.State private var proxy: GeometryProxy?
     
     init(sensitivity: Int, startAngle: Double, state: Binding<State>) {
         self.sensitivity = Double(sensitivity) * INPUT_SENSITIVITY
-        self._gestureStartAngle = SwiftUI.State(wrappedValue: CGFloat(startAngle))
-        self._previousAngle = SwiftUI.State(wrappedValue: Angle(degrees: startAngle))
-        self._externalStartAngle = SwiftUI.State(wrappedValue: startAngle)
+        self.startAngle = startAngle
+        
         self._state = state
     }
     
@@ -45,7 +40,7 @@ struct RotaryView: View {
         GestureView { gesture in
             KnobView()
                 .rotationEffect(
-                    Angle(degrees: state.angle)
+                    Angle(degrees: state.angle + startAngle)
                 )
                 .onChange(of: gesture) {
                     updateState(gesture: $0)

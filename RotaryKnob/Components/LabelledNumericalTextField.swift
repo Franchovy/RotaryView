@@ -10,12 +10,15 @@ import SwiftUI
 struct LabelledNumericalTextField<T: Numeric>: View {
     let title: String
     let hint: String
+    let disabled: Bool
     let formatter: Formatter
+    
     @Binding var value: T
     
-    init (title: String, hint: String? = nil, value: Binding<T>, formatter: Formatter? = nil) {
+    init (title: String, hint: String? = nil, value: Binding<T>, disabled: Bool = false, formatter: Formatter? = nil) {
         self.title = title
         self.hint = hint ?? title
+        self.disabled = disabled
         self._value = value
         self.formatter = formatter ?? .number
     }
@@ -26,6 +29,7 @@ struct LabelledNumericalTextField<T: Numeric>: View {
                 .font(.system(size: 12, weight: .semibold))
             
             TextField(hint, value: $value, formatter: formatter)
+                .disabled(disabled)
         }
     }
 }
