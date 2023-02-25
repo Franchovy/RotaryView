@@ -19,7 +19,7 @@ struct TestView: View {
                 Text("Initializer properties")
                     .font(.title3)
                 
-                LabelledNumericalTextField(title: "Start Angle (deg.)", value: $startAngle)
+                LabelledNumericalTextField(title: "Start Angle (deg.)", value: $startAngle, formatter: .ranged(min: -360, max: 360))
                 LabelledNumericalTextField(title: "Sensitivity (1-10)", value: $sensitivity, formatter: .ranged(min: 1, max: 10))
                 
                 Spacer()
@@ -28,7 +28,7 @@ struct TestView: View {
                 Text("Live properties (State)")
                     .font(.title3)
                 
-                LabelledNumericalTextField(title: "Speed (px. per second)", value: $state.speed, disabled: true)
+                LabelledNumericalTextField(title: "Speed", value: $state.speed, disabled: true)
                 LabelledNumericalTextField(title: "Angular Speed (deg. per second)", value: $state.angularSpeed, disabled: true)
                 LabelledNumericalTextField(title: "Angle (deg.)", value: $state.angle, disabled: true)
             }

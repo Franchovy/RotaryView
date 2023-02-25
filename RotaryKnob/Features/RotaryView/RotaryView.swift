@@ -39,7 +39,7 @@ struct RotaryView: View {
     var body: some View {
         KnobView()
             .rotationEffect(
-                Angle(degrees: state.angle + startAngle)
+                Angle(degrees: state.angle)
             )
             .readGeometry {
                 proxy = $0
@@ -58,6 +58,12 @@ struct RotaryView: View {
                                 previousGesture = nil
                             })
             )
+            .onAppear {
+                state.angle = startAngle
+            }
+            .onChange(of: startAngle) {
+                state.angle = $0
+            }
     }
     
     private func gestureChanged(_ gesture: DragGesture.Value) {
