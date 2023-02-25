@@ -34,8 +34,8 @@ struct TestView: View {
             }
             
             RotaryView(sensitivity: sensitivity, startAngle: startAngle, state: $state)
-                .background(.white)
                 .frame(width: 400, height: 400)
+                .background(.white)
         }
         .frame(width: 600)
     }
