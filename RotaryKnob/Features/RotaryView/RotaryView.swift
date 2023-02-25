@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let INPUT_SENSITIVITY: Double = 0.7
+let INPUT_SENSITIVITY: Double = 0.1
 let INNER_RADIUS_IGNORED_SIZE: Double = 4.0
 
 extension RotaryView {
@@ -61,18 +61,20 @@ struct RotaryView: View {
             }
             
             guard let timeInterval = gesture.timeInterval,
-                  let translation = gesture.gesture?.translation.height.negated else { return }
+                  let angularChange = gesture.angularChange(around: frame.center) else { return }
             
             // Ignore small time intervals to avoid "jumpy" behaviour
             guard timeInterval > 0.007 else { state = state.stopped; return }
             
-            let angle = Angle(degrees: gestureStartAngle + translation * (sensitivity / 10)).normalized()
-            let angularSpeed = (angle - previousAngle).degrees / timeInterval
+            let angularSpeed = angularChange / timeInterval
+            let speed = angularSpeed * (sensitivity / 10)
+
+            let angle = Angle(degrees: state.angle + speed.degrees).normalized()
             previousAngle = angle
             
             state = State(
-                speed: Int(angularSpeed * (sensitivity / 10)),
-                angularSpeed: angularSpeed,
+                speed: Int(speed.degrees),
+                angularSpeed: angularSpeed.degrees,
                 angle: angle.degrees
             )
         } else {
